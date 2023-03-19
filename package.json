@@ -1,0 +1,41 @@
+{
+  "name": "agroacers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hmr": "nodemon index.js",
+    "nodemon": "npm run hmr",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backend": "^0.0.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.2",
+    "python-shell": "^3.0.1",
+    "razorpay": "^2.8.0",
+    "request": "^2.88.2",
+    "shortid": "^2.2.16",
+    "twilio": "^3.75.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
