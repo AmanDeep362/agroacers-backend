@@ -23,7 +23,9 @@ app.use(require("./admin/AgricultureUniversit"));
 app.use(require("./admin/shopproduct"));
 app.use(require("./admin/sendreply"));
 app.use(require("./admin/addScheme"));
-
+app.get("/",(req,res)=>{
+  res.send("Hello world")
+})
 // RazorPay Integration
 app.use(require("./routes/Razorpay"));
 
