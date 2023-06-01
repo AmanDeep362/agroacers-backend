@@ -150,9 +150,11 @@ router.post('/login', async(req, res) => {
     }
 })
 
-router.get('/aboutuser', Authentication, (req, res) => {
+router.get('/aboutuser/:id', Authentication, async(req, res) => {
     try {
-      res.send(req.rootUser);
+        const id = req.params.id;
+       const userDetails = await User.findOne({_id:id})
+      res.send(userDetails);
     } catch (error) {
       res.status(500).send({ message: 'An error occurred', error: error });
     }
