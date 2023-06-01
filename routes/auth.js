@@ -150,7 +150,7 @@ router.post('/login', async(req, res) => {
     }
 })
 
-app.get('/aboutuser', Authentication, (req, res) => {
+router.get('/aboutuser', Authentication, (req, res) => {
     try {
       res.send(req.rootUser);
     } catch (error) {
