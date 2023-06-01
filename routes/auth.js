@@ -151,7 +151,12 @@ router.post('/login', async(req, res) => {
 })
 
 router.get('/aboutuser', Authentication, (req, res) => {
-    res.send(req.rootUser);
+    try {
+        
+        res.send(req.rootUser);
+    } catch (error) {
+        res.send("msg",error);
+    }
 
 
 });
