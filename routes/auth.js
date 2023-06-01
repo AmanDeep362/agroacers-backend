@@ -150,7 +150,7 @@ router.post('/login', async(req, res) => {
     }
 })
 
-router.get('/aboutuser/:id', Authentication, async(req, res) => {
+router.get('/aboutuser/:id',  async(req, res) => {
     try {
         const id = req.params.id;
        const userDetails = await User.findOne({_id:id})
