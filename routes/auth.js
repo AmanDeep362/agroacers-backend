@@ -150,16 +150,13 @@ router.post('/login', async(req, res) => {
     }
 })
 
-router.get('/aboutuser', Authentication, (req, res) => {
+app.get('/aboutuser', Authentication, (req, res) => {
     try {
-        
-        res.send(req.rootUser);
+      res.send(req.rootUser);
     } catch (error) {
-        res.send("msg",error);
+      res.status(500).send({ message: 'An error occurred', error: error });
     }
-
-
-});
+  });
 router.get('/logout', (req, res) => {
     res.clearCookie('jwtToken')
     res.status(200).send('user logout');
