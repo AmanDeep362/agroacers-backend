@@ -151,13 +151,18 @@ router.post('/login', async(req, res) => {
 })
 
 router.get('/aboutuser/:id',  async(req, res) => {
-    try {
+    
         const id = req.params.id;
-       const userDetails = await User.findOne({_id:id})
-      res.send(userDetails);
-    } catch (error) {
-      res.status(500).send({ message: 'An error occurred', error: error });
-    }
+      await User.findOne({_id:id}).findOne({ _id: id }).then((product) => {
+        if (product) {
+            return res.send(product)
+        }
+    }).catch((err) => {
+        console.log(err)
+        res.sendStatus(404)
+    })
+     
+   
   });
 router.get('/logout', (req, res) => {
     res.clearCookie('jwtToken')
